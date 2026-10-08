@@ -19,5 +19,5 @@ disk, or about the passkey check being bypassed are especially wanted.
 
 It reads TOTP seeds out of a Keeper vault and writes them into 1Password
 items. A seed written to the wrong item attaches a second factor to somebody
-else's account. The guard that prevents this, and the containment that keeps
+else's account. The safeguards that prevent this, and the containment that keeps
 seeds out of `argv` and off disk, are the two things most worth attacking.

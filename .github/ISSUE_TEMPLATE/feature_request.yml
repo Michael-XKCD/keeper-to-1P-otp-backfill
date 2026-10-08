@@ -6,7 +6,7 @@ body:
     attributes:
       value: |
         This is a focused tool. Changes that widen what it can write to, or
-        weaken a refusal, are unlikely to be accepted - see the guard section
+        weaken a refusal, are unlikely to be accepted - see the Safeguards section
         in the README.
   - type: textarea
     id: problem

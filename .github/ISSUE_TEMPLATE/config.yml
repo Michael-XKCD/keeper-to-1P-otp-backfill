@@ -1,5 +1,5 @@
 blank_issues_enabled: false
 contact_links:
   - name: Security vulnerability
-    url: https://github.com/Michael-XKCD/keeper-otp-backfill/security/advisories/new
+    url: https://github.com/Michael-XKCD/keeper-to-1P-otp-backfill/security/advisories/new
     about: Report privately. Please do not open a public issue.
