@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "otp-backfill"
+# Read from otp_backfill.__version__ so the package version, the --version
+# output and the installer receipt can never disagree about which build is on a
+# machine. Bump it there.
+dynamic = ["version"]
+description = "Add the 2FA seeds the Keeper import dropped to the 1Password items that should have them"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+# The Keeper SDK is optional on purpose: every path that touches it is behind an
+# adapter and the whole suite runs against in-memory fakes, so a build machine
+# that cannot install it can still lint, test and package.
+live = [
+  # Pinned exactly, not floored. The adapter introspects semi-private SDK
+  # internals - TypedRecord vs PasswordRecord, params.record_cache, sync_down -
+  # and every one of those facts was verified against exactly this version.
+  # Keeper ships roughly weekly, so ">=18" would silently re-point a tool that
+  # reads a password vault at internals nobody has checked.
+  "keepercommander==18.1.3",
+]
+# 1Password is reached through the `op` CLI, which is not a Python dependency.
+# It ships with the desktop app and is what carries the desktop-app
+# authentication; a service account cannot reach Employee/Private vaults, which
+# is where most of these items live.
+
+[project.scripts]
+otp-backfill = "otp_backfill:main"
+
+[tool.setuptools]
+# One module, not a package: the whole tool is otp_backfill.py.
+py-modules = ["otp_backfill"]
+
+[tool.setuptools.dynamic]
+version = {attr = "otp_backfill.__version__"}

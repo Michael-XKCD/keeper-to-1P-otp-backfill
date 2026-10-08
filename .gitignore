@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+.payload-lock
+.DS_Store
+.venv/
+.claude/
+.pytest_cache/

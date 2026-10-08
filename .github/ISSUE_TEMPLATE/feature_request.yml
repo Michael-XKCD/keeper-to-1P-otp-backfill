@@ -1,0 +1,25 @@
+name: Feature request
+description: Suggest something this should do
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This is a focused tool. Changes that widen what it can write to, or
+        weaken a refusal, are unlikely to be accepted - see the guard section
+        in the README.
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: What are you trying to do that you cannot do today?
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: What you have in mind
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: What you have already tried

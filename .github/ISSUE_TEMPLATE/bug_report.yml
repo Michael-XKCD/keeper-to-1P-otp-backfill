@@ -1,0 +1,36 @@
+name: Bug report
+description: Something behaves incorrectly
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Do not paste secrets.** No seeds, passwords, item contents or real
+        record titles. Redact before posting. For a security issue, use private
+        reporting instead - see SECURITY.md.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: Include the exact command and the output, with secrets redacted.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected instead
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Output of `--version`, or the commit you are on.
+    validations:
+      required: true
+  - type: input
+    id: platform
+    attributes:
+      label: macOS and Python version
+    validations:
+      required: true
