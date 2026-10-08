@@ -85,9 +85,8 @@ prompt.
 
 ## Safeguards
 
-A wrong code is worse than a missing one. A missing code is still in Keeper. A
-wrong one puts 2FA on someone else's account and locks *them* out. So when in
-doubt, the tool flags the record and skips it.
+A wrong code is worse than a missing one. So when in doubt, the tool flags the
+record and skips it.
 
 ### Hard limits
 
